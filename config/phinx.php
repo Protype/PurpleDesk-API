@@ -17,8 +17,8 @@
   return [
 
     'paths' => [
-      'migrations' => '%%PHINX_CONFIG_DIR%%/database/migrations',
-      'seeds' => '%%PHINX_CONFIG_DIR%%/database/seeds'
+      'migrations' => _ROOT . '/database/migrations',
+      'seeds' => _ROOT . '/database/seeds'
     ],
 
     'environments' => [
