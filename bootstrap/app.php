@@ -2,6 +2,15 @@
 
 require_once __DIR__.'/../vendor/autoload.php';
 
+
+// ROOT
+define ('_ROOT', dirname (__DIR__));
+
+// Loaders
+require_once _ROOT . '/resources/constants/index.php';
+require_once _ROOT . '/resources/models/index.php';
+
+
 (new Laravel\Lumen\Bootstrap\LoadEnvironmentVariables(
     dirname(__DIR__)
 ))->bootstrap();
