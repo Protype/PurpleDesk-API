@@ -3,19 +3,31 @@
 require_once __DIR__.'/../vendor/autoload.php';
 
 
-// ROOT
-define ('_ROOT', dirname (__DIR__));
-
-// Loaders
-require_once _ROOT . '/resources/constants/index.php';
-require_once _ROOT . '/resources/models/index.php';
-
-
 (new Laravel\Lumen\Bootstrap\LoadEnvironmentVariables(
     dirname(__DIR__)
 ))->bootstrap();
 
 date_default_timezone_set(env('APP_TIMEZONE', 'UTC'));
+
+
+/*
+|--------------------------------------------------------------------------
+| Bootstrap
+|--------------------------------------------------------------------------
+*/
+
+// Purple Desk Version
+define ('_VERSION', 'v0.1.0');
+
+// ROOT
+define ('_ROOT', dirname (__DIR__));
+
+// Bootstrap
+require_once _ROOT . '/bootstrap/database.php';
+
+// Loaders
+require_once _ROOT . '/resources/constants/index.php';
+require_once _ROOT . '/database/models/index.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -117,8 +129,9 @@ $app->configure('app');
 
 $app->router->group([
     'namespace' => 'App\Http\Controllers',
+    'prefix'    => 'api/v1',
 ], function ($router) {
-    require __DIR__.'/../routes/web.php';
+    require _ROOT . '/routes/index.php';
 });
 
 return $app;

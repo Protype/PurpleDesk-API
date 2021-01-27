@@ -13,6 +13,9 @@
   // Load environment files
   Dotenv\Dotenv::createImmutable (_ROOT)->load ();
 
+  // Load constants
+  require_once _ROOT . '/resources/constants/index.php';
+
   // Config
   return [
 

@@ -11,6 +11,6 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+$router->post ('/user/auth', 'UserController@auth');
+
+$router->get  ('/users', 'UserController@list');
