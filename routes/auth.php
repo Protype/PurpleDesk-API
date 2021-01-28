@@ -11,4 +11,4 @@
 |
 */
 
-$router->get  ('/users', 'UserController@list');
+$router->post ('/auth/login', 'AuthController@login');
