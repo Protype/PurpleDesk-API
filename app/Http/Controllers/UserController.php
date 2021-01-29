@@ -28,7 +28,7 @@
      */
     public function list () {
 
-      $users = Model::Factory ('Model\User')
+      $users = Model::Factory ('App\Models\User')
         ->order_by_desc ('id')
         ->find_array ();
 

@@ -19,4 +19,5 @@
    * Load routes
    *
    */
+  require 'auth.php';
   require 'user.php';

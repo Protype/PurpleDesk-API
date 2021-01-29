@@ -11,4 +11,12 @@
 |
 */
 
-$router->get  ('/users', 'UserController@list');
+$router->group ([
+
+  'middleware' => 'auth',
+
+], function ($router) {
+
+  $router->get  ('/users', 'UserController@list');
+
+});
